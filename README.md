@@ -22,16 +22,10 @@ ilt-datascience/
 ```
 
 ## 🚀 Panduan Menjalankan Aplikasi
-### Persiapan Lingkungan (Virtual Environment)
-Disarankan untuk menggunakan virtual environment agar tidak terjadi konflik library.
-
-Windows:
+### Clone Repositori
+Langkah pertama, unduh proyek ini ke komputer lokal Anda menggunakan perintah berikut:
 ```
-python -m venv venv
-```
-macOS/Linux:
-```
-python3 -m venv venv
+git clone https://github.com/dicodingacademy/ilt-datascience.git
 ```
 
 ### Instalasi Library
@@ -44,5 +38,9 @@ pip install -r requirements.txt
 Jalankan perintah berikut pada terminal di dalam direktori proyek:
 ```
 streamlit run dashboard/dashboard.py
+```
+atau
+```
+python -m streamlit run dashboard/dashboard.py
 ```
 Aplikasi akan secara otomatis terbuka di browser default Anda.
