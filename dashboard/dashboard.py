@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 
-# --- FUNSI VISUALISASI ---
+# --- FUNGSI VISUALISASI ---
 def ai_vs_productivity(df):
     fig = plt.figure(figsize=(8,6))
     df['ai_usage_group'] = pd.cut(
@@ -101,7 +101,7 @@ st.set_page_config(page_title="AI Productivity Dashboard", layout="wide")
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv('df.csv')
+    df = pd.read_csv('dashboard/df.csv')
     return df
 
 df = load_data()
@@ -109,7 +109,7 @@ df = load_data()
 # --- LOAD MODEL & ENCODERS ---
 @st.cache_resource
 def load_ml_components():
-    data = joblib.load('rf_model.joblib')
+    data = joblib.load('dashboard/rf_model.joblib')
     return data['model'], data['encoders'], data['features']
 
 try:
