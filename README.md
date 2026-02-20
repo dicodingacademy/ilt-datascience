@@ -8,6 +8,7 @@
 Proyek ini bertujuan untuk menganalisis bagaimana integrasi **Artificial Intelligence (AI)** di tempat kerja memengaruhi produktivitas karyawan dan risiko *burnout*. Dengan menggunakan data historis, dashboard ini memberikan wawasan mendalam (EDA) serta fitur prediksi berbasis Machine Learning untuk membantu manajemen SDM dalam mengambil keputusan yang berbasis data (*data-driven decision*).
 
 ## 🗂️ Struktur Direktori
+```bash
 ilt-datascience/
 ├── dashboard/
 │   ├── dashboard.py
@@ -18,28 +19,28 @@ ilt-datascience/
 │   └── ai_productivity.zip
 ├── README.md
 └── requirements.txt
+```
 
 ## 🚀 Panduan Menjalankan Aplikasi
-1. Persiapan Lingkungan (Virtual Environment)
-Disarankan untuk menggunakan virtual environment agar tidak terjadi konflik library.
+### Clone Repositori
+Langkah pertama, unduh proyek ini ke komputer lokal Anda menggunakan perintah berikut:
+```
+git clone https://github.com/dicodingacademy/ilt-datascience.git
+```
 
-Windows:
-Bash
-python -m venv venv
-venv\Scripts\activate
-
-macOS/Linux:
-Bash
-python3 -m venv venv
-source venv/bin/activate
-
-2. Instalasi Library
+### Instalasi Library
 Instal semua dependensi yang dibutuhkan menggunakan pip:
-Bash
+```
 pip install -r requirements.txt
+```
 
-3. Menjalankan Dashboard
+### Menjalankan Dashboard
 Jalankan perintah berikut pada terminal di dalam direktori proyek:
-Bash
+```
 streamlit run dashboard/dashboard.py
+```
+atau
+```
+python -m streamlit run dashboard/dashboard.py
+```
 Aplikasi akan secara otomatis terbuka di browser default Anda.
