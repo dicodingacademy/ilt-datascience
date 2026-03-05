@@ -1,6 +1,6 @@
-numpy
-pandas
-streamlit
-scikit-learn
-matplotlib
-seaborn
+sqlalchemy~=2.0
+psycopg2-binary~=2.9
+pandas~=2.2
+requests~=2.32
+beautifulsoup4~=4.12
+prefect
