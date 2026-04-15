@@ -27,7 +27,7 @@ def fetching_content(url):
 
 def extract_book_data(article):
     """Mengambil data buku berupa judul, harga, ketersediaan, dan rating dari article (element html)."""
-    book_title = article.find('h3').text
+    book_title = article.find("h3").find("a").get("title")
     product_element = article.find('div', class_='product_price')
     price = product_element.find('p', class_='price_color').text
     availability_element = product_element.find('p', class_='instock availability')
@@ -66,6 +66,9 @@ def scrape_book(base_url, start_page=1, delay=2):
             if next_button:
                 page_number += 1
                 time.sleep(delay) # Delay sebelum halaman berikutnya
+                
+                if page_number == 5: # For hands-on purposes
+                    break # Berhenti jika sudah mencapai halaman 5
             else:
                 break # Berhenti jika sudah tidak ada next button
         else:
