@@ -29,7 +29,7 @@ def fetching_content(url: str):
 @task(name="Extract Book Data")
 def extract_book_data(article: BeautifulSoup):
     """Mengambil data buku berupa judul, harga, ketersediaan, dan rating dari article (element html)."""
-    book_title = article.find('h3').text
+    book_title = article.find("h3").find("a").get("title")
     product_element = article.find('div', class_='product_price')
     price = product_element.find('p', class_='price_color').text
     availability_element = product_element.find('p', class_='instock availability')
@@ -69,6 +69,9 @@ def scrape_book(base_url: str, max_page: int = 10, delay: int = 2):
             if next_button:
                 page_number += 1
                 time.sleep(delay) # Delay sebelum halaman berikutnya
+
+                if page_number == 5: # For hands-on purposes
+                    break # Berhenti jika sudah mencapai halaman 5
             else:
                 break # Berhenti jika sudah tidak ada next button
         else:
@@ -96,7 +99,8 @@ if __name__ == '__main__':
         name="daily-website-scraper",
         tags=["scraping", "books"],
         parameters={"base_url": "https://books.toscrape.com/catalogue/page-{}.html", "max_pages": 5},
-        interval=timedelta(days=1)
+        interval=timedelta(days=1),
+        pause_on_shutdown=False
         # Alternatif menggunakan Cron (misal setiap jam 2 pagi):
         # cron="0 2 * * *" 
     )
