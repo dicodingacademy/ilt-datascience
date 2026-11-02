@@ -27,7 +27,18 @@ Langkah pertama, unduh proyek ini ke komputer lokal Anda menggunakan perintah be
 ```
 git clone https://github.com/dicodingacademy/ilt-datascience.git
 ```
-
+Masuk ke dalam folder proyek yang baru diunduh lewat Terminal dengan perintah:
+```
+cd ilt-datascience
+```
+Buka folder tersebut sebagai ruang kerja utama VS Code Anda dengan mengetik:
+```
+code . -r
+```
+Agar pustaka (library) proyek tidak bentrok dengan sistem utama laptop Anda, buat lingkungan isolasi Python di Terminal baru di dalam folder proyek tersebut:
+```
+python -m venv venv
+```
 ### Instalasi Library
 Instal semua dependensi yang dibutuhkan menggunakan pip:
 ```
